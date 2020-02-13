@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 
+import history from './history';
+
 import {Nav, Navbar, NavDropdown} from 'react-bootstrap';
 
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
@@ -8,10 +10,11 @@ import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import FindListing from './containers/FindListing/FindListing';
 import ListingDisplay from './containers/ListingDisplay/ListingDisplay';
 import CreateListing from './containers/CreateListing/CreateListing';
+import EditListing from './containers/EditListing/EditListing';
 
 function App() {
     return (
-        <Router>
+        <Router history={history}>
             <div className="App">
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                     <Navbar.Brand href="#home">eCommerce aggregator</Navbar.Brand>
@@ -28,12 +31,6 @@ function App() {
                                 <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
-                        <Nav>
-                            <Nav.Link href="#deets">More deets</Nav.Link>
-                            <Nav.Link eventKey={2} href="#memes">
-                                Dank memes
-                            </Nav.Link>
-                        </Nav>
                     </Navbar.Collapse>
                 </Navbar>
 
@@ -43,6 +40,9 @@ function App() {
                     </Route>
                     <Route path="/create-listing">
                         <CreateListing/>
+                    </Route>
+                    <Route path="/edit-listing/:skuId">
+                        <EditListing />
                     </Route>
                     <Route path="/listing/:id">
                         <ListingDisplay/>

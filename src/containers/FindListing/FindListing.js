@@ -36,6 +36,7 @@ class findListing extends Component {
                     <td>{this.state.loadedListings[entry]['sku_id']}</td>
                     <td>{this.state.loadedListings[entry]['listing_status']}</td>
                     <td><Link to={`/listing/${this.state.loadedListings[entry]['sku_id']}`}>Open</Link></td>
+                    <td><Link to={`/edit-listing/${this.state.loadedListings[entry]['sku_id']}`}>Edit</Link></td>
                 </tr>
             )
         }
@@ -50,6 +51,7 @@ class findListing extends Component {
                             <th>SKU ID</th>
                             <th>Listing status</th>
                             <th>View details</th>
+                            <th>Edit listing</th>
                         </tr>
                     </thead>
                     <tbody>

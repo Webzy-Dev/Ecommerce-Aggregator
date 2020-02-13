@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import {useInput} from '../../hooks/input-hook';
+
+import {Redirect} from 'react-router-dom';
 
 import {updateObject} from '../../util/util';
 
@@ -16,6 +17,10 @@ const CreateListing = (props) => {
         'location_status': 'YES'
     });
 
+    const [shouldRedirect, changeRedirect] = useState(false);
+
+    const [redirectPath, setRedirectPath] = useState('/create-listing');
+
     const handleSubmit = e => {
         e.preventDefault();
         
@@ -23,6 +28,7 @@ const CreateListing = (props) => {
             const res = await axios.post('http://localhost:8000/listings', formData);
 
             if(res.data.message === 'Success') {
+                changeRedirect(true);
             }
         }
 
@@ -32,12 +38,22 @@ const CreateListing = (props) => {
     const handleInputChange = (e, field) => {
         const data = e.target.value;
 
+        if(field === 'sku_id') {
+            setRedirectPath(`/listing/${data}`);
+        }
+
         setFormData(updateObject(formData, field, data));
 
     }
 
+    const redirect = shouldRedirect ? (
+        <Redirect to={redirectPath} />
+    ) : null;
+
     return (
+        
         <Container>
+            {redirect}
             <Form onSubmit={handleSubmit}>
 
                 <Form.Group>
