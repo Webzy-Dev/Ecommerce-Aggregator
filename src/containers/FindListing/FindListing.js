@@ -6,11 +6,13 @@ import {Container, Table} from 'react-bootstrap';
 import axios from 'axios';
 
 import classes from './FindListing.module.css';
+import Spinner from '../../components/Spinner/Spinner';
 
 class findListing extends Component {
 
     state = {
-        loadedListings: []
+        loadedListings: [],
+        isLoading: true
     }
 
     componentDidMount() {
@@ -20,7 +22,8 @@ class findListing extends Component {
                 this.setState({
                     loadedListings: {
                         ...res.data.data
-                    }
+                    },
+                    isLoading: false
                 });
                 console.log(this.state.loadedListings);
             })
@@ -29,6 +32,8 @@ class findListing extends Component {
 
     render() {
         const data = []
+
+        const spinner = this.state.isLoading ? <Spinner/> : null;
 
         for (let entry in this.state.loadedListings) {
             data.push(
@@ -45,6 +50,7 @@ class findListing extends Component {
 
         return (
             <Container>
+                {spinner}
                 <Table className={classes.Table} striped bordered hover>
                     <thead>
                         <tr>

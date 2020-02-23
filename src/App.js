@@ -10,6 +10,7 @@ import {Nav, Navbar, NavDropdown} from 'react-bootstrap';
 
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 
+import Home from './containers/Home/Home';
 import FindListing from './containers/FindListing/FindListing';
 import ListingDisplay from './containers/ListingDisplay/ListingDisplay';
 import CreateListing from './containers/CreateListing/CreateListing';
@@ -25,7 +26,7 @@ function App() {
             <div className="App">
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
 
-                    <Navbar.Brand href="#home">eCommerce aggregator</Navbar.Brand>
+                    <Navbar.Brand href="/">eCommerce aggregator</Navbar.Brand>
 
                     <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                     <Navbar.Collapse id="responsive-navbar-nav">
@@ -49,6 +50,9 @@ function App() {
                 </Navbar>
 
                 <Switch>
+                    <Route path="/" exact>
+                        <Home/>
+                    </Route>
                     <Route path="/find-listing">
                         <FindListing/>
                     </Route>
