@@ -1,0 +1,22 @@
+.Form {
+    margin: 8%;
+    padding: 5%;
+    background-color: white !important;
+    border-radius: 26px;
+}
+
+.Input {
+    background-color:  #ffcc99 !important;
+    border: #ff8000 2px solid !important;
+    border-radius: 26px;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 60px !important;
+}
+
+h5 {
+    color: #4b4b4b !important;
+    margin-bottom: 50px !important;
+}

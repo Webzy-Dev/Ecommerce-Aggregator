@@ -9,13 +9,16 @@ import axios from 'axios';
 
 import {updateObject} from '../../util/util';
 
+import classes from '../CreateListing/CreateListing.module.css';
+
 const EditListing = props => {
     const {skuId} = useParams();
 
     const [formData,
         setFormData] = useState({});
-    
-    const [touched, setTouched] = useState({});
+
+    const [touched,
+        setTouched] = useState({});
 
     const [shouldRedirect,
         changeRedirect] = useState(false);
@@ -43,9 +46,12 @@ const EditListing = props => {
         e.preventDefault();
 
         async function postData() {
-            const res = await axios.post('http://localhost:8000/listings/update', {listing_id: formData['listing_id'], ...touched});
+            const res = await axios.post('http://localhost:8000/listings/update', {
+                listing_id: formData['listing_id'],
+                ...touched
+            });
 
-            if(res.data.message === 'Success') {
+            if (res.data.message === 'Success') {
                 changeRedirect(true);
             }
 
@@ -58,7 +64,9 @@ const EditListing = props => {
     const handleInputChange = (e, field) => {
         const data = e.target.value;
 
-        if(field === 'sku_id') {     setRedirectPath(`/listing/${data}`); }
+        if (field === 'sku_id') {
+            setRedirectPath(`/listing/${data}`);
+        }
 
         setTouched(updateObject(touched, field, data));
         setFormData(updateObject(formData, field, data));
@@ -72,10 +80,16 @@ const EditListing = props => {
     return (
         <Container>
             {redirect}
-            <Form onSubmit={handleSubmit}>
+            <Form className={classes.Form} onSubmit={handleSubmit}>
+                <h1 style={{
+                    fontWeight: "bold"
+                }}>Edit this listing</h1>
+                <h5>Edit the fields that you want and press submit!</h5>
+
                 <Form.Group>
                     <Form.Label>SKU ID</Form.Label>
                     <Form.Control
+                        className={classes.Input}
                         type="text"
                         placeholder={formData['sku_id']}
                         onChange={(e) => handleInputChange(e, 'sku_id')}/>
@@ -84,6 +98,7 @@ const EditListing = props => {
                 <Form.Group>
                     <Form.Label>Product ID</Form.Label>
                     <Form.Control
+                        className={classes.Input}
                         type="text"
                         placeholder={formData['product_id']}
                         onChange={(e) => handleInputChange(e, 'product_id')}/>
@@ -92,6 +107,7 @@ const EditListing = props => {
                 <Form.Group>
                     <Form.Label>MRP</Form.Label>
                     <Form.Control
+                        className={classes.Input}
                         type="text"
                         placeholder={formData['mrp']}
                         onChange={(e) => handleInputChange(e, 'mrp')}/>
@@ -100,6 +116,7 @@ const EditListing = props => {
                 <Form.Group>
                     <Form.Label>Your selling price</Form.Label>
                     <Form.Control
+                        className={classes.Input}
                         type="text"
                         placeholder={formData['selling_price']}
                         onChange={(e) => handleInputChange(e, 'selling_price')}/>
@@ -108,6 +125,7 @@ const EditListing = props => {
                 <Form.Group>
                     <Form.Label>HSN</Form.Label>
                     <Form.Control
+                        className={classes.Input}
                         type="text"
                         placeholder={formData['hsn']}
                         onChange={(e) => handleInputChange(e, 'hsn')}/>
@@ -116,6 +134,7 @@ const EditListing = props => {
                 <Form.Group>
                     <Form.Label>Tax code</Form.Label>
                     <Form.Control
+                        className={classes.Input}
                         type="text"
                         placeholder={formData['tax_code']}
                         onChange={(e) => handleInputChange(e, 'tax_code')}/>
@@ -124,6 +143,7 @@ const EditListing = props => {
                 <Form.Group>
                     <Form.Label>Listing status</Form.Label>
                     <Form.Control
+                        className={classes.Input}
                         as="select"
                         onChange={(e) => handleInputChange(e, 'listing_status')}>
                         <option>ACTIVE</option>
@@ -134,6 +154,7 @@ const EditListing = props => {
                 <Form.Group>
                     <Form.Label>Fulfillment profile</Form.Label>
                     <Form.Control
+                        className={classes.Input}
                         as="select"
                         onChange={(e) => handleInputChange(e, 'fulfillment_profile')}>
                         <option>FLIPKART</option>
@@ -144,6 +165,7 @@ const EditListing = props => {
                 <Form.Group>
                     <Form.Label>Fulfillment shipping provider</Form.Label>
                     <Form.Control
+                        className={classes.Input}
                         as="select"
                         onChange={(e) => handleInputChange(e, 'fulfillment_shipping_provider')}>
                         <option>EKART</option>
@@ -154,6 +176,7 @@ const EditListing = props => {
                 <Form.Group>
                     <Form.Label>Fulfillment procurement type</Form.Label>
                     <Form.Control
+                        className={classes.Input}
                         as="select"
                         onChange={(e) => handleInputChange(e, 'fulfillment_procurement_type')}>
                         <option>REGULAR</option>
@@ -167,6 +190,7 @@ const EditListing = props => {
                 <Form.Group>
                     <Form.Label>Package name</Form.Label>
                     <Form.Control
+                        className={classes.Input}
                         placeholder={formData['package_name']}
                         type="text"
                         onChange={(e) => handleInputChange(e, 'package_name')}/>
@@ -175,6 +199,7 @@ const EditListing = props => {
                 <Form.Group>
                     <Form.Label>Location ID</Form.Label>
                     <Form.Control
+                        className={classes.Input}
                         type="text"
                         placeholder={formData['location_id']}
                         onChange={(e) => handleInputChange(e, 'location_id')}/>
@@ -183,6 +208,7 @@ const EditListing = props => {
                 <Form.Group>
                     <Form.Label>Location status</Form.Label>
                     <Form.Control
+                        className={classes.Input}
                         as="select"
                         onChange={(e) => handleInputChange(e, 'location_status')}>
                         <option>YES</option>
@@ -193,6 +219,7 @@ const EditListing = props => {
                 <Form.Group>
                     <Form.Label>Location inventory</Form.Label>
                     <Form.Control
+                        className={classes.Input}
                         type="text"
                         placeholder={formData['location_inventory']}
                         onChange={(e) => handleInputChange(e, 'location_inventory')}/>

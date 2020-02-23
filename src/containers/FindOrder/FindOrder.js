@@ -5,6 +5,8 @@ import {Link} from 'react-router-dom';
 import {Container, Table} from 'react-bootstrap';
 import axios from 'axios';
 
+import classes from '../FindListing/FindListing.module.css';
+
 class FindOrder extends Component {
 
     state = {
@@ -44,7 +46,7 @@ class FindOrder extends Component {
 
         return (
             <Container>
-                <Table striped bordered hover>
+                <Table className={classes.Table} striped bordered hover>
                     <thead>
                         <tr>
                             <th>#</th>

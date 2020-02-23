@@ -5,6 +5,8 @@ import {useParams} from 'react-router-dom';
 
 import {Table, Container} from 'react-bootstrap';
 
+import classes from '../FindListing/FindListing.module.css';
+
 const ListingDisplay = (props) => {
     const [data,
         setData] = useState([]);
@@ -38,7 +40,7 @@ const ListingDisplay = (props) => {
 
     return (
         <Container>
-            <Table bordered striped hover>
+            <Table className={classes.Table} bordered striped hover>
                 <thead>
                     <tr>
                         <th>Field</th>

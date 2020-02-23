@@ -1,6 +1,9 @@
 import React from 'react';
 import './App.css';
 
+import styled, {keyframes} from 'styled-components';
+import {bounceIn} from 'react-animations';
+
 import history from './history';
 
 import {Nav, Navbar, NavDropdown} from 'react-bootstrap';
@@ -14,12 +17,16 @@ import EditListing from './containers/EditListing/EditListing';
 
 import FindOrder from './containers/FindOrder/FindOrder';
 
+const Bounce = styled.div `animation: 2s ${keyframes `${bounceIn}`} 1`;
+
 function App() {
     return (
         <Router history={history}>
             <div className="App">
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+
                     <Navbar.Brand href="#home">eCommerce aggregator</Navbar.Brand>
+
                     <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
@@ -49,7 +56,7 @@ function App() {
                         <CreateListing/>
                     </Route>
                     <Route path="/edit-listing/:skuId">
-                        <EditListing />
+                        <EditListing/>
                     </Route>
                     <Route path="/find-order">
                         <FindOrder/>
