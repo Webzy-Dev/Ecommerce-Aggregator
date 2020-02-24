@@ -25,6 +25,8 @@ const CreateListing = (props) => {
 
     const handleSubmit = e => {
         e.preventDefault();
+
+        console.log(formData)
         
         async function postData() {
             const res = await axios.post('http://localhost:8000/listings', formData);
@@ -48,6 +50,15 @@ const CreateListing = (props) => {
 
     }
 
+    const handleFileChange = e => {
+        const file = e.target.files[0];
+
+        console.log(file);
+
+        setFormData(updateObject(formData, 'image_path', `C:\\Users\\91972\\Desktop\\ssip\\Ecommerce-Aggregator\\${file.name}`));
+        console.log(formData.image)
+    }
+
     const redirect = shouldRedirect ? (
         <Redirect to={redirectPath} />
     ) : null;
@@ -63,6 +74,11 @@ const CreateListing = (props) => {
                 <h5>Fill out the details below to get started!</h5>
 
                 <Form.Group>
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control className={classes.Input} type="email" onChange={(e) => handleInputChange(e, 'email')}/>
+                </Form.Group>
+
+                <Form.Group>
                     <Form.Label>SKU ID</Form.Label>
                     <Form.Control className={classes.Input} type="text" onChange={(e) => handleInputChange(e, 'sku_id')}/>
                 </Form.Group>
@@ -70,6 +86,11 @@ const CreateListing = (props) => {
                 <Form.Group>
                     <Form.Label>Product ID</Form.Label>
                     <Form.Control className={classes.Input} type="text" onChange={(e) => handleInputChange(e, 'product_id')}/>
+                </Form.Group>
+
+                <Form.Group>
+                    <Form.Label>Image of the product</Form.Label>
+                    <Form.Control className={classes.Input} type="file" onChange={handleFileChange}/>
                 </Form.Group>
 
                 <Form.Group>

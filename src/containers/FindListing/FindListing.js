@@ -8,6 +8,11 @@ import axios from 'axios';
 import classes from './FindListing.module.css';
 import Spinner from '../../components/Spinner/Spinner';
 
+import {slideInDown} from 'react-animations';
+import styled, {keyframes} from 'styled-components';
+
+const SlideInDown = styled.div `animation: 0.8s ${keyframes `${slideInDown}`} 1`;
+
 class findListing extends Component {
 
     state = {
@@ -31,9 +36,11 @@ class findListing extends Component {
     }
 
     render() {
+        
         const data = []
 
         const content = (
+            <SlideInDown>
             <Table className={classes.Table} striped bordered hover>
                             <thead>
                             <tr>
@@ -49,6 +56,7 @@ class findListing extends Component {
                         {data}
                     </tbody>
                 </Table>
+                </SlideInDown>
         )
 
         const spinner = this.state.isLoading ? <Spinner className={classes.Spinner}/> : content;

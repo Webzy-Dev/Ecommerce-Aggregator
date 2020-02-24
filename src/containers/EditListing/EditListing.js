@@ -42,7 +42,7 @@ const EditListing = props => {
         console.log(formData);
     }, []);
 
-    const handleSubmit = e => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
 
         async function postData() {
@@ -51,9 +51,12 @@ const EditListing = props => {
                 ...touched
             });
 
-            if (res.data.message === 'Success') {
-                changeRedirect(true);
+            if (res.data.status === 'Success') {
+                await changeRedirect(true);
             }
+
+            console.log(shouldRedirect);
+            console.log(redirectPath);
 
             console.log(res);
         }

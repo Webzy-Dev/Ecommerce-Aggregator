@@ -30,12 +30,23 @@ const ListingDisplay = (props) => {
     let tableData = []
 
     for (let field in data) {
-        tableData.push(
-            <tr key={field}>
-                <td>{field}</td>
-                <td>{data[field]}</td>
-            </tr>
-        )
+        if(field !== 'image_path') {
+            tableData.push(
+                <tr key={field}>
+                    <td>{field}</td>
+                    <td>{data[field]}</td>
+                </tr>
+            )
+        } else {
+            const fname = data[field].substring(43);
+            const path = `/pics/${fname}`;
+            tableData.push(
+                <tr key={field}>
+                    <td>Image</td>
+                    <td><img style={{height: "100px", width: "auto"}} src={path}/></td>
+                </tr>
+            )
+        }
     }
 
     return (
