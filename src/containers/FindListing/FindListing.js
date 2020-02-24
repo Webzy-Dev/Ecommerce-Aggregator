@@ -33,7 +33,25 @@ class findListing extends Component {
     render() {
         const data = []
 
-        const spinner = this.state.isLoading ? <Spinner/> : null;
+        const content = (
+            <Table className={classes.Table} striped bordered hover>
+                            <thead>
+                            <tr>
+                            <th>#</th>
+                            <th>Listing ID</th>
+                            <th>SKU ID</th>
+                            <th>Listing status</th>
+                            <th>View details</th>
+                            <th>Edit listing</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {data}
+                    </tbody>
+                </Table>
+        )
+
+        const spinner = this.state.isLoading ? <Spinner className={classes.Spinner}/> : null;
 
         for (let entry in this.state.loadedListings) {
             data.push(
@@ -51,21 +69,6 @@ class findListing extends Component {
         return (
             <Container>
                 {spinner}
-                <Table className={classes.Table} striped bordered hover>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Listing ID</th>
-                            <th>SKU ID</th>
-                            <th>Listing status</th>
-                            <th>View details</th>
-                            <th>Edit listing</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {data}
-                    </tbody>
-                </Table>
             </Container>
         )
     }

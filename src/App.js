@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import classes from './App.module.css';
 
 import styled, {keyframes} from 'styled-components';
 import {bounceIn} from 'react-animations';
@@ -24,7 +24,7 @@ function App() {
     return (
         <Router history={history}>
             <div className="App">
-                <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+                <Navbar className={classes.Navbar} collapseOnSelect expand="lg" variant="dark">
 
                     <Navbar.Brand href="/">eCommerce aggregator</Navbar.Brand>
 
