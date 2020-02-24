@@ -51,7 +51,7 @@ class findListing extends Component {
                 </Table>
         )
 
-        const spinner = this.state.isLoading ? <Spinner className={classes.Spinner}/> : null;
+        const spinner = this.state.isLoading ? <Spinner className={classes.Spinner}/> : content;
 
         for (let entry in this.state.loadedListings) {
             data.push(
