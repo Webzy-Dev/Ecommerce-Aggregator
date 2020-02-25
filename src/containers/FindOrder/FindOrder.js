@@ -68,7 +68,7 @@ class FindOrder extends Component {
                     </Form>
                     </td>
                     <td>
-                        Track
+                        <Link to='/track-order'>Track</Link>
                     </td>
                 </tr>
             )

@@ -18,6 +18,7 @@ import EditListing from './containers/EditListing/EditListing';
 
 import FindOrder from './containers/FindOrder/FindOrder';
 import OrderDisplay from './containers/OrderDisplay/OrderDisplay';
+import TrackOrder from './containers/TrackOrder/TrackOrder';
 
 const SlideInDown = styled.div `animation: 0.5s ${keyframes `${slideInDown}`} 1`;
 const ZoomIn = styled.div `animation: 0.5s ${keyframes `${zoomIn}`} 1`;
@@ -38,7 +39,6 @@ function App() {
                             <NavDropdown title="Listings" id="collasible-nav-dropdown">
                                 <NavDropdown.Item href="/create-listing">Create a new listing</NavDropdown.Item>
                                 <NavDropdown.Item href="/find-listing">View all listings</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                             </NavDropdown>
                             </SlideInDown>
                             <SlideInDown>
@@ -65,6 +65,9 @@ function App() {
                     </Route>
                     <Route path="/find-order">
                         <FindOrder/>
+                    </Route>
+                    <Route path="/track-order">
+                        <TrackOrder/>
                     </Route>
                     <Route path="/listing/:id">
                         <ListingDisplay/>

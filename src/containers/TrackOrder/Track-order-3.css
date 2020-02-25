@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #ffe8d6 !important;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+.letter {
+  position: absolute;
+  margin-left: 837px;
+  margin-top: 364px;
+  font-family: "Teko", sans-serif;
+}
+.letter h1 {
+  font-family: "Teko", sans-serif;
+
+  font-size: 72px;
+}
+.line {
+  position: absolute;
+  width: 1920px;
+  height: 10px;
+  background-color: #c4c4c4;
+  border: none;
+  margin-top: 625px;
+  border-radius: 50px;
+}
+.truck {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  margin-left: 36px;
+  margin-top: 457px;
+  animation: delivery-truck 6s forwards;
+}
+.traffic-light {
+  position: absolute;
+  margin-left: 581px;
+  margin-top: 525px;
+}
+.traffic {
+  height: 100px;
+  width: 100px;
+}
+.board-sign {
+  position: absolute;
+
+  margin-top: 500px;
+  margin-left: 1486px;
+}
+.cloud-big {
+  position: absolute;
+  margin-left: 481px;
+  margin-top: 300px;
+  animation: cloud1 10s ease;
+}
+.cloud1 {
+  height: 200px;
+  width: 200px;
+  opacity: 0.8;
+}
+.panel {
+  height: 125px;
+  width: 116px;
+}
+.med-cloud {
+  position: absolute;
+  margin-left: 253px;
+  margin-top: 289px;
+  animation: cloud2 10s ease-out;
+}
+.cloud2 {
+  height: 150px;
+  width: 150px;
+}
+.small-cloud {
+  position: absolute;
+  margin-left: 631px;
+  margin-top: 314px;
+  animation: cloud3 10s ease;
+}
+.cloud3 {
+  height: 100px;
+  width: 100px;
+  opacity: 0.6;
+}
+.grass-1 {
+  position: absolute;
+  margin-left: 149px;
+  margin-top: 552px;
+}
+.grass1 {
+  height: 100px;
+  width: 100px;
+}
+.grass-2 {
+  position: absolute;
+  margin-left: 203px;
+  margin-top: 552px;
+}
+.grass2 {
+  height: 100px;
+  width: 100px;
+}
+.grass-3 {
+  position: absolute;
+  margin-left: 557px;
+  margin-top: 540px;
+}
+.grass3 {
+  height: 100px;
+  width: 100px;
+}
+.grass-4 {
+  position: absolute;
+  margin-left: 620px;
+  margin-top: 540px;
+}
+.grass4 {
+  height: 100px;
+  width: 100px;
+}
+.grass-5 {
+  position: absolute;
+  margin-left: 1198px;
+  margin-top: 540px;
+}
+.grass5 {
+  height: 100px;
+  width: 100px;
+}
+.grass-6 {
+  position: absolute;
+  margin-left: 1317px;
+  margin-top: 552px;
+}
+.grass6 {
+  height: 100px;
+  width: 100px;
+}
+.grass-7 {
+  position: absolute;
+  margin-left: 1544px;
+  margin-top: 540px;
+}
+.grass7 {
+  height: 100px;
+  width: 100px;
+}
+
+@keyframes delivery-truck {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(1000px);
+  }
+}
+@keyframes cloud1 {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(1310px);
+  }
+}
+@keyframes cloud2 {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(-124px);
+  }
+}
+@keyframes cloud3 {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(1488px);
+  }
+}
+
+.status{
+  position: absolute;
+  width: 100%;
+  margin-top: 40%;
+}
+
+.order-status ul{
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  font-size: 40px;
+  font-family: "Teko", sans-serif;
+}
+
+.order-status{
+  width: 100%;
+}

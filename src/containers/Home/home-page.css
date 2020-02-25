@@ -1,0 +1,145 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body {
+    background: #FFE8D6;
+    overflow-x: hidden;
+}
+.flex {
+    display: flex;
+    list-style-type: none;
+}
+.right {
+    float: right;
+}
+.right img {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+.right button {
+    margin-top: 9px;
+    background: #FF971D;
+    border-radius: 37px;
+    width: 150px;
+    height: 50px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 36px;
+    color: #FFFFFF;
+}
+.sign {
+    width: 100%;
+    height: 60px;
+}
+.bg {
+    background-color: #FFE8D6;
+}
+.menu {
+    width: 100%;
+    height: 70px;
+    background: #FFFFFF;
+}
+.just {
+    width: 1440px;
+    height: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.just li {
+    width: 250px;
+    height: 69px;
+    text-align: center;
+    border-radius: 10px;
+}
+.just li a{
+    color: #FF971D;
+    transition:all ease 0.5s; 
+    z-index: 99;
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: Teko;
+    font-style: normal;
+    font-weight: normal;
+    border-radius: 10px;
+    font-size: 30px;
+    line-height: 69px;
+}
+ul.just li > a:hover, ul.just li > a:focus, ul.just li:hover	{
+    background-color: #FF971D;
+    color: #fff;
+    transition:all ease 0.5s;
+}
+.switch {
+    text-align: center;
+    margin-top: 40px;
+}
+.switch img {
+    width: 70px;
+    height: 70px;
+    margin-right: 56px;
+    margin-left: 56px;
+    margin-bottom: 5px;
+}
+.mar {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.bb {
+    text-align: center;
+    margin-bottom: 2em;
+    /* padding-top: 20px; */
+}
+.bb a {
+    color: #000;
+    opacity: 50%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+}
+.col {
+    width: 200px !important;
+    height: 451px;
+    background: #FFFFFF;
+    margin-right: 39px;
+    margin-left: 39px;
+    border-radius: 40px;
+
+}
+.tt {
+    text-align: center;
+    padding-left: 7.5%;
+}
+th,td {
+    margin-left: 100em !important;
+    margin-right: 100em !important;
+}
+.hv {
+    height: 100vh;
+}
+#myChart {
+    width: 100%;
+    height: 100%;
+}
+.align {
+    text-align: center;
+}
+.jumbotron {
+    margin: 0 10% 0 10%;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    height: 60vh;
+}
