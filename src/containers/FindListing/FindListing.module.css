@@ -3,6 +3,11 @@
     margin-top: 8%;
     border-radius: 26px;
     outline: none;
+    text-align: center;
+}
+
+.White {
+    background-color: white !important;
 }
 
 .Spinner {

@@ -16,13 +16,13 @@ const ListingDisplay = (props) => {
     const [data,
         setData] = useState([]);
 
-    let {id} = useParams();
+    let {order_id} = useParams();
 
     useEffect(() => {
         async function fetchData() {
             try {
-                const res = await axios.get(`http://localhost:8000/listings/${id}`);
-                setData(res.data.data);
+                const res = await axios.get(`http://localhost:8000/orders?order_id=${order_id}`);
+                setData(res.data.data[0]);
             } catch (e) {
                 console.log(e);
             }

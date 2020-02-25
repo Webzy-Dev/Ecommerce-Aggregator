@@ -9,6 +9,11 @@ import {updateObject} from '../../util/util';
 import {Container, Form, Button} from 'react-bootstrap';
 import axios from 'axios';
 
+import {slideInDown} from 'react-animations';
+import styled, {keyframes} from 'styled-components';
+
+const SlideInDown = styled.div `animation: 0.8s ${keyframes `${slideInDown}`} 1`;
+
 const CreateListing = (props) => {
 
     const [formData, setFormData] = useState({
@@ -68,6 +73,7 @@ const CreateListing = (props) => {
         <Container>
             {redirect}
 
+            <SlideInDown>
             <Form className={classes.Form} onSubmit={handleSubmit}>
 
                 <h1 style={{fontWeight: "bold"}}>Create a new listing</h1>
@@ -175,6 +181,7 @@ const CreateListing = (props) => {
                     Submit
                 </Button>
             </Form>
+            </SlideInDown>
         </Container>
     );
 };
